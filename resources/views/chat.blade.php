@@ -26,9 +26,10 @@
             <li class="list-group-item active">Chat Room</li>
             <ul class="list-group" v-chat-scroll>
                 <message
-                        v-for="value in chat.message"
+                        v-for="value, index in chat.message"
                         :key = value.index
-                        color ='warning'
+                        :color =chat.color[index]
+                        :user = chat.user[index]
                 >
                     @{{value}}
                 </message>
